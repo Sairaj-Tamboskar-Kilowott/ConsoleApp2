@@ -1,29 +1,29 @@
 ﻿
-Random random = new Random();
-int daysUntilExpiration = random.Next(12);
-int discountPercentage = 0;
+string[] names = { "Bob", "Conrad", "Grant" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+Console.WriteLine("\n");
 
-if (daysUntilExpiration == 0)
-{
-    Console.WriteLine("Your subscription has expired.");
-}
-else if (daysUntilExpiration == 1)
-{
-    Console.WriteLine("Your subscription expires within a day!");
-    discountPercentage = 20;
-}
 
-else if (daysUntilExpiration <= 5)
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
+foreach (int items in inventory)
 {
-    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days.");
-    discountPercentage = 10;
-}
-else if (daysUntilExpiration <= 10)
-{
-    Console.WriteLine("Your subscription will expire soon.  Renew now!");
+    sum += items;
 }
 
-if (discountPercentage > 0)
+Console.WriteLine($"We have {sum} items in inventory.\n\n");
+
+
+//challenge
+string[] orderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+
+foreach (string orderID in orderIDs)
 {
-    Console.WriteLine($"Renew now and save {discountPercentage}%.");
+    if (orderID.StartsWith("C"))
+    {
+        Console.WriteLine(orderID);
+    }
 }
