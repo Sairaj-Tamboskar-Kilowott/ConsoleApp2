@@ -1,29 +1,25 @@
-﻿
-string[] names = { "Bob", "Conrad", "Grant" };
-foreach (string name in names)
+﻿/*
+  This code reverses a message, counts the number of times 
+  a particular character appears, then prints the results
+  to the console window.
+*/
+string originalMessage = "Hello there, My name is Sairaj Tamboskar " +
+    "I am an Electronics and Telecommunication Engineer, I work in Kilowott Agency as a software developer Trainee.";
+
+char[] message = originalMessage.ToCharArray();
+Array.Reverse(message);
+
+int letterCount = 0;
+
+foreach (char letter in message)
 {
-    Console.WriteLine(name);
-}
-Console.WriteLine("\n");
-
-
-int[] inventory = { 200, 450, 700, 175, 250 };
-int sum = 0;
-foreach (int items in inventory)
-{
-    sum += items;
-}
-
-Console.WriteLine($"We have {sum} items in inventory.\n\n");
-
-
-//challenge
-string[] orderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
-
-foreach (string orderID in orderIDs)
-{
-    if (orderID.StartsWith("C"))
+    if (letter == 'o')
     {
-        Console.WriteLine(orderID);
+        letterCount++;
     }
 }
+
+string newMessage = new String(message);
+
+Console.WriteLine(newMessage);
+Console.WriteLine($"'o' appears {letterCount} times.");
