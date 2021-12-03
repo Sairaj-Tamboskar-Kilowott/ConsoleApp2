@@ -1,25 +1,7 @@
-﻿/*
-  This code reverses a message, counts the number of times 
-  a particular character appears, then prints the results
-  to the console window.
-*/
-string originalMessage = "Hello there, My name is Sairaj Tamboskar " +
-    "I am an Electronics and Telecommunication Engineer, I work in Kilowott Agency as a software developer Trainee.";
+﻿string projectName = "ACME";
+string englishLocation = $@"c:\Exercise\{projectName}\data.txt";
+Console.WriteLine($"View English output:\n\t\t{englishLocation}\n");
 
-char[] message = originalMessage.ToCharArray();
-Array.Reverse(message);
-
-int letterCount = 0;
-
-foreach (char letter in message)
-{
-    if (letter == 'o')
-    {
-        letterCount++;
-    }
-}
-
-string newMessage = new String(message);
-
-Console.WriteLine(newMessage);
-Console.WriteLine($"'o' appears {letterCount} times.");
+string russianMessage = "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0432\u044b\u0432\u043e\u0434";
+string russianLocation = $@"c:\Exercise\{projectName}\ru-RU\data.txt";
+Console.WriteLine($"{russianMessage}:\n\t\t{russianLocation}\n");
