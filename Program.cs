@@ -1,4 +1,8 @@
 ﻿
-int fahrenheit = 94;
-decimal celsius = (fahrenheit - 32m) * (5m / 9m);
-Console.WriteLine("The temperature is " + celsius + " Celsius.");
+int firstValue = 500;
+int secondValue = 600;
+int largerValue, smallervalue;
+largerValue = Math.Max(firstValue, secondValue);
+smallervalue = Math.Min(firstValue, secondValue);
+Console.WriteLine(largerValue);
+Console.WriteLine(smallervalue);
