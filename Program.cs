@@ -1,26 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ConsoleApp2
+
 {
     internal class Program
     {
+        // some test data array
+        static int[] data = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
 
-        static int[] array = { 40, 38, 37, 36, 34, 33, 32, 31, 30, 30, 30, 29, 26, 26, 19 };
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var sp = new Stats();
-            sp.Numbers = array;
+            // create an object of the StatsProcessor class
+            var spObject = new StatsProcessor();
 
-            var x = sp.Mean();
-            Console.WriteLine($"Mean is {x}");
-            var y = sp.Median();
-            Console.WriteLine("Median is " + y);
-            var z = sp.Mode();
-            Console.WriteLine("Mode is " + z);
+            // feed it the test data as input
+            // (this maybe eventually coming from somewhere else...)
+            spObject.Numbers = data;
+
+            /*
+             * invoke the method to do the processing 
+             * and capture the output
+             */
+            var result = spObject.GetStatsProcessorResult();
+
+            /// console i/o is not the responsibility of the StatsProcessor class!
+            Console.WriteLine($"Mean: {result.Mean}");
+            Console.WriteLine($"Median: {result.Median}");
+            Console.WriteLine($"Mode: {result.Mode}");
         }
     }
 }
